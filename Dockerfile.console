@@ -1,0 +1,9 @@
+FROM docker.redpanda.com/redpandadata/console:v2.2.4
+
+COPY config.yml /tmp/config.yml
+
+ENV CONFIG_FILEPATH=/tmp/config.yml
+
+ENTRYPOINT ["/bin/sh", "-c", "/app/console"]
+
+EXPOSE 8080
